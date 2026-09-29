@@ -1,59 +1,61 @@
 export default function HistorySection() {
-  const timelineNodes = [
+  // Aumentado para 7 itens para replicar exatamente os 7 nós do seu design
+  const timeline = [
     { id: 1, year: "1998", title: "Fundação" },
-    { id: 2, year: "2005", title: "Expansão" },
-    { id: 3, year: "2010", title: "Nova Fábrica" },
-    { id: 4, year: "2015", title: "Parceria Indusparquet" },
-    { id: 5, year: "2019", title: "Prémio de Design" },
-    { id: 6, year: "2023", title: "Loja Conceito" },
-    { id: 7, year: "2026", title: "Futuro" },
+    { id: 2, year: "2002", title: "Expansão" },
+    { id: 3, year: "2008", title: "Nova Fábrica" },
+    { id: 4, year: "2012", title: "Showroom" },
+    { id: 5, year: "2015", title: "Indusparquet" },
+    { id: 6, year: "2020", title: "Prémio" },
+    { id: 7, year: "2026", title: "Atualidade" },
   ];
 
   return (
-    <section className="w-full bg-[#EAEAEA] py-24 flex flex-col items-center overflow-hidden">
+    <section className="relative w-full bg-[#EAEAEA] py-24 flex flex-col overflow-hidden">
       
-      <h2 className="font-playfair text-5xl md:text-6xl text-stone-900 tracking-wide mb-32 md:mb-48">
-        Nossa história
-      </h2>
+      <div className="w-full max-w-7xl mx-auto px-8 mb-24 text-center">
+        <h2 className="font-playfair text-5xl md:text-6xl text-stone-900 tracking-widest">
+          Nossa história
+        </h2>
+      </div>
 
-      <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-12 h-1 flex items-center">
+      <div className="relative w-full max-w-6xl mx-auto h-64 flex items-center">
         
-        <div className="absolute left-4 right-4 sm:left-12 sm:right-12 h-px bg-[#0A365C]" />
+        {/* Linha Horizontal Central: Vai de ponta a ponta do contentor */}
+        <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-[#0A365C]" />
 
-        {/* Nós da Linha Temporal */}
-        <div className="relative z-10 w-full flex justify-between items-center">
-          {timelineNodes.map((node, index) => {
-            // Alterna entre cima (índices pares) e baixo (índices ímpares)
+        {/* Contentor dos Nós: Tem padding (px-8 md:px-16) para recuar os nós em relação às pontas da linha horizontal */}
+        <div className="relative z-10 w-full flex justify-between items-center h-full px-8 md:px-16">
+          {timeline.map((node, index) => {
             const isTop = index % 2 === 0;
 
             return (
-              <div key={node.id} className="relative flex flex-col items-center group cursor-pointer">
+              <div key={node.id} className="relative flex flex-col items-center w-0 group cursor-pointer">
                 
                 {isTop ? (
-                  /* Nó a apontar para CIMA */
-                  <div className="absolute bottom-0 flex flex-col items-center mb-0">
-                    {/* Área de texto futuro (invisível até adicionar conteúdo) */}
-                    <div className="absolute bottom-full mb-4 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap text-center">
-                      <span className="block text-[#0A365C] font-bold">{node.year}</span>
-                      <span className="block text-sm text-stone-600">{node.title}</span>
+                  /* Nó para CIMA */
+                  <div className="absolute bottom-1/2 flex flex-col items-center">
+                    
+                    <div className="absolute bottom-full mb-4 w-32 text-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:-translate-y-2">
+                      <span className="block font-playfair text-2xl text-[#0A365C] mb-1">{node.year}</span>
+                      <span className="block text-xs text-stone-600 uppercase tracking-widest">{node.title}</span>
                     </div>
-                    {/* Ponto superior */}
-                    <div className="w-2 h-2 rounded-full bg-[#0A365C]" />
-                    {/* Linha vertical */}
-                    <div className="w-px h-16 sm:h-24 md:h-32 bg-[#0A365C]" />
+
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#0A365C]" />
+                    <div className="w-px h-16 md:h-24 bg-[#0A365C]" />
                   </div>
                 ) : (
-                  /* Nó a apontar para BAIXO */
-                  <div className="absolute top-0 flex flex-col items-center mt-0">
-                    {/* Linha vertical */}
-                    <div className="w-px h-16 sm:h-24 md:h-32 bg-[#0A365C]" />
-                    {/* Ponto inferior */}
-                    <div className="w-2 h-2 rounded-full bg-[#0A365C]" />
-                    {/* Área de texto futuro (invisível até adicionar conteúdo) */}
-                    <div className="absolute top-full mt-4 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap text-center">
-                      <span className="block text-[#0A365C] font-bold">{node.year}</span>
-                      <span className="block text-sm text-stone-600">{node.title}</span>
+                  /* Nó para BAIXO */
+                  <div className="absolute top-1/2 flex flex-col items-center">
+                    
+                    <div className="w-px h-16 md:h-24 bg-[#0A365C]" />
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#0A365C]" />
+                    
+                    <div className="absolute top-full mt-4 w-32 text-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-y-2">
+                      <span className="block font-playfair text-2xl text-[#0A365C] mb-1">{node.year}</span>
+                      <span className="block text-xs text-stone-600 uppercase tracking-widest">{node.title}</span>
                     </div>
+
                   </div>
                 )}
                 
