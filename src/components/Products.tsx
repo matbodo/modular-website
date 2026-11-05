@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Product } from "@/types/types";
 
 const products: Product[] = [
-    { id: 1, name: "Mesa de Jantar Carvalho Maciço", imageUrl: "/produtos/mesa-carvalho.jpg" },
+  { id: 1, name: "Mesa de Jantar Carvalho Maciço", imageUrl: "/produtos/mesa-carvalho.jpg" },
   { id: 2, name: "Cadeira Serena em Nogueira", imageUrl: "/produtos/cadeira-serena.jpg" },
   { id: 3, name: "Aparador Ripado Cumaru", imageUrl: "/produtos/aparador-cumaru.jpg" },
   { id: 4, name: "Poltrona Lótus Freijó", imageUrl: "/produtos/poltrona-lotus.jpg" },
@@ -10,7 +10,7 @@ const products: Product[] = [
 
 export default function ProductsSection() {
     return (
-        <section className="flex w-full min-h-150 border-y-2 border-blue-500/20">
+        <section className="flex w-full min-h-150">
 
       <div className="flex-1 bg-[#EAEAEA] py-16 px-8 flex flex-col items-center justify-center">
         
@@ -37,7 +37,7 @@ export default function ProductsSection() {
       {/* Barra Lateral Direita (Azul escuro com a seta) */}
       <button 
         aria-label="Ver mais móveis"
-        className="w-20 md:w-32 bg-[#0A365C] hover:bg-[#07243e] transition-colors flex items-center justify-center shrink-0 group"
+        className="w-20 md:w-32 bg-[#0A365C]  flex items-center justify-center shrink-0 group cursor-pointer"
       >
         <span className="text-white text-2xl md:text-4xl font-light transform transition-transform group-hover:translate-x-2">
           &gt;

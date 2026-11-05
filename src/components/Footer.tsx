@@ -7,15 +7,13 @@ export default function Footer() {
     <footer className="w-full bg-[#0A365C] pt-20 pb-8 px-8 flex flex-col items-center">
       
       <div className="mb-20">
-        <Link href="/">
-          <Image 
+          <Image
             src="/logo.png" 
             alt="Modular Logo" 
-            width={180} 
-            height={60} 
-            className="object-contain brightness-0 invert opacity-90"
+            width={250} 
+            height={250} 
+            className="object-contain"
           />
-        </Link>
       </div>
 
       <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20 text-white/80">
@@ -70,8 +68,7 @@ export default function Footer() {
       </div>
 
       <div className="w-full max-w-7xl border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/50 font-light">
-        <p>&copy; {new Date().getFullYear()} Modular Móveis. Todos os direitos reservados.</p>
-        <p className="mt-2 md:mt-0">Desenvolvido por si</p>
+        <p>&copy; {new Date().getFullYear()} Modular Móveis.</p>
       </div>
       
     </footer>

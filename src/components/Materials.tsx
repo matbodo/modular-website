@@ -1,8 +1,8 @@
 export default function MaterialsSection() {
   const woods = [
-    { id: 1, name: "Madeira Escura", image: "/materiais/madeira-1.jpg" },
-    { id: 2, name: "Madeira Média", image: "/materiais/madeira-2.jpg" },
-    { id: 3, name: "Madeira Clara", image: "/materiais/madeira-3.jpg" },
+    { id: 1, name: "Madeira Escura", image: "/wood-1.png" },
+    { id: 2, name: "Madeira Média", image: "/wood-2.png" },
+    { id: 3, name: "Madeira Clara", image: "/wood-3.png" },
   ];
 
   return (
@@ -11,12 +11,12 @@ export default function MaterialsSection() {
       <div className="absolute top-0 right-0 w-full lg:w-[65%] h-[65%] bg-[#0A365C] z-0" />
 
       <div className="relative z-10 w-full lg:w-[35%] flex flex-col justify-center px-8 lg:pl-16 py-16 lg:py-0">
-        <h2 className="font-playfair text-6xl md:text-7xl lg:text-8xl text-stone-900 tracking-wide leading-tight">
+        <h2 className="font-playfair text-6xl md:text-7xl lg:text-8xl text-stone-900 tracking-[0.2rem] mx-auto leading-tight">
           Matéria-
           <br />
           prima
         </h2>
-        <button className="mt-10 self-start border border-[#0A365C] text-[#0A365C] px-8 py-3 text-xs md:text-sm tracking-widest hover:bg-[#0A365C] hover:text-white transition-all uppercase">
+        <button className="mt-10 mx-auto self-start border border-[#0A365C] text-[#0A365C] px-8 py-3 text-xs md:text-sm tracking-widest hover:bg-[#0A365C] hover:text-white transition-all uppercase">
           Show more
         </button>
       </div>

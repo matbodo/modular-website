@@ -7,25 +7,31 @@ export default function EnvironmentsSection() {
   ];
 
   return (
-    <section className="relative w-full min-h-175 flex overflow-hidden">
+    // 1. Removido o "flex" da section e definido o fundo cinzento diretamente aqui
+    <section className="relative w-full min-h-175 overflow-hidden bg-[#EAEAEA]">
       
-      <div className="absolute inset-y-0 left-0 w-[30%] bg-[#0A365C]" />
-      <div className="absolute inset-y-0 right-0 w-[70%] bg-[#EAEAEA]" />
+      {/* 2. Bloco Azul Absoluto: Agora trava perfeitamente na margem esquerda */}
+      <div className="absolute inset-y-0 left-0 w-full md:w-[30%] lg:w-[35%] bg-[#0A365C] z-0" />
 
       {/* Conteúdo Principal */}
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center py-24 px-8">
 
-        {/* Lado da Imagem (Sobrepondo a divisão de cores) */}
-        <div className="w-full md:w-1/2 flex justify-center md:justify-start relative">
+        {/* Lado da Imagem */}
+        <div className="w-full md:w-1/2 relative h-full">
           
-          {/* Moldura Branca (Offset) */}
-          <div className="absolute -top-4 -left-4 w-[85%] max-w-100 aspect-3/4 bg-white z-0 shadow-sm" />
-          
-          {/* Imagem Principal */}
-          <div 
-            className="relative z-10 w-[85%] max-w-100 aspect-3/4 bg-cover bg-center shadow-lg bg-stone-300"
-            style={{ backgroundImage: "url('/ambientes/ambiente-destaque.jpg')" }}
-          />
+          {/* 3. A NOVA DIV STICKY: É ela que trava a imagem a 8rem do topo */}
+          <div className="flex justify-center md:justify-start">
+            
+            {/* Moldura Branca (Offset) */}
+            <div className="absolute -top-4 -left-4 w-[85%] max-w-100 aspect-3/4 bg-white z-0 shadow-sm" />
+            
+            {/* Imagem Principal */}
+            <div 
+              className="relative z-10 w-[85%] max-w-100 aspect-3/4 bg-cover bg-center shadow-lg bg-stone-300"
+              style={{ backgroundImage: "url('/kitchen-section.png')" }}
+            />
+          </div>
+
         </div>
 
         {/* Lado da Lista de Ambientes */}
