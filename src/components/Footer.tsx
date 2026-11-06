@@ -10,8 +10,8 @@ export default function Footer() {
           <Image
             src="/logo.png" 
             alt="Modular Logo" 
-            width={250} 
-            height={250} 
+            width={200} 
+            height={80} 
             className="object-contain"
           />
       </div>

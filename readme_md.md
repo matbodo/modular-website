@@ -23,8 +23,7 @@ Para dar continuidade ao projeto, escolha uma das seguintes frentes de desenvolv
 O design de alto padrão exige fluidez.
 
 - [x] Instalar o GSAP (`npm install gsap @gsap/react`).
-- [] Criar animação de _reveal_ (fade-up) nos textos da `HeroSection` ao carregar a página.
-- [ ] Integrar o `ScrollTrigger` nas secções (`ProductsSection`, `ProjectsSection`) para os elementos surgirem suavemente consoante o scroll.
+- [] Criar animação de _reveal_ (fade-up) nos textos e elementos das sections ao carregar a página.
 - [ ] Animar o "desenho" da linha central na `HistorySection`.
 
 ### 2. Criação das Rotas Internas (App Router)
